@@ -42,6 +42,9 @@ int main()
 результат виконання:
 
 >enter a number
+
 >8  // number 8 has been entered using keyboard
+
 >y = 8
+
 ---

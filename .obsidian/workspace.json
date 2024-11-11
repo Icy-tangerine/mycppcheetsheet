@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "logic_operators.md",
+                "file": "switch case.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "logic_operators"
+              "title": "switch case"
             }
           },
           {
@@ -160,7 +160,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 239.5
+    "width": 213.5
   },
   "right": {
     "id": "e4dde47121ac8c65",
@@ -247,11 +247,11 @@
   },
   "active": "2c09acbfb10640e4",
   "lastOpenFiles": [
-    "loops.md",
+    "source file inclusion.md",
     "namespaces.md",
+    "loops.md",
     "logic_operators.md",
     "input-output_stream.md",
-    "switch case.md",
-    "source file inclusion.md"
+    "switch case.md"
   ]
 }
