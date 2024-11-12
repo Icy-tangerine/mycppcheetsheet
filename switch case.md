@@ -52,3 +52,5 @@ int main(){
 >input a number
 >2
 >second case triggered
+
+https://en.cppreference.com/w/cpp/language/switch

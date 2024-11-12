@@ -35,3 +35,4 @@ int main(){
 
 >10
 
+https://en.cppreference.com/w/cpp/language/namespace

@@ -52,6 +52,7 @@ int main(){
 
 >10
 
+https://en.cppreference.com/w/cpp/language/while
 
 ---
 
@@ -68,7 +69,7 @@ for("*початкове значення*" ; "*умова*" ; "*крок*"){
 #include <iostream>
 #include "math.h"
 int main(){
-	for(int i=0;i<3.14;i+=(3.14/10))
+	for(float i=0;i<3.14;i+=(3.14/10))
 	{
 		std::cout<<sin(i)<<std::endl;
 	}
@@ -96,3 +97,6 @@ int main(){
 >0.31038
 
 >0.00159302
+
+
+https://en.cppreference.com/w/cpp/language/for
