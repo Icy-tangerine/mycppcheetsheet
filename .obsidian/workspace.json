@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "logic_operators.md",
+                "file": "source file inclusion.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "logic_operators"
+              "title": "source file inclusion"
             }
           }
         ],
@@ -179,7 +179,11 @@
   },
   "active": "871c87c9bada5786",
   "lastOpenFiles": [
-    "input-output_stream.md",
-    "logic_operators.md"
+    "logic_operators.md",
+    "loops.md",
+    "namespaces.md",
+    "switch case.md",
+    "source file inclusion.md",
+    "input-output_stream.md"
   ]
 }
