@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "source file inclusion"
             }
+          },
+          {
+            "id": "528139d384c8e8db",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "array.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "array"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -92,7 +106,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "e4dde47121ac8c65",
@@ -177,14 +191,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "10b2d6cf6c87bfa0",
+  "active": "528139d384c8e8db",
   "lastOpenFiles": [
-    "source file inclusion.md",
-    "new file.md",
-    "logic_operators.md",
     "loops.md",
     "namespaces.md",
-    "switch case.md",
-    "input-output_stream.md"
+    "logic_operators.md",
+    "input-output_stream.md",
+    "array.md",
+    "source file inclusion.md",
+    "switch case.md.backup",
+    "new file.md",
+    "switch case.md"
   ]
 }
