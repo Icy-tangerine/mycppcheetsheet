@@ -8,34 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "40f8bb3f017cd7e8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "input-output_stream.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "input-output_stream"
-            }
-          },
-          {
-            "id": "871c87c9bada5786",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "source file inclusion.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "source file inclusion"
-            }
-          },
-          {
             "id": "528139d384c8e8db",
             "type": "leaf",
             "state": {
@@ -48,9 +20,32 @@
               "icon": "lucide-file",
               "title": "array"
             }
+          },
+          {
+            "id": "302ddb29d4807096",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          },
+          {
+            "id": "19a2eaa19d54eb72",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "source_file_inclusion.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "source_file_inclusion"
+            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -193,14 +188,16 @@
   },
   "active": "528139d384c8e8db",
   "lastOpenFiles": [
-    "loops.md",
-    "namespaces.md",
-    "logic_operators.md",
-    "input-output_stream.md",
+    "min_max_avg.md",
+    "source_file_inclusion.md",
+    "switch_case.md",
+    "sorting_algorithms.md",
     "array.md",
-    "source file inclusion.md",
+    "loops.md",
+    "logic_operators.md",
+    "input_output_stream.md",
+    "namespaces.md",
     "switch case.md.backup",
-    "new file.md",
-    "switch case.md"
+    "new file.md"
   ]
 }
