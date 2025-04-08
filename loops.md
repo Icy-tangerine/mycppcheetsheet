@@ -69,7 +69,7 @@ for("*початкове значення*" ; "*умова*" ; "*крок*"){
 #include <iostream>
 #include "math.h"
 int main(){
-	for(float i=0;i<3.14;i+=(3.14/10))
+	for(float i=0;i<3.14;i+=(3.14159265258979/10))
 	{
 		std::cout<<sin(i)<<std::endl;
 	}
