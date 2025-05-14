@@ -1,4 +1,4 @@
-це змінна що може зберігати в собі адресу іншої змінної
+це змінна що може зберігати в собі адресу іншої змінної чи [[dynamic_array|масиву]] 
 
 ```c++
 #include <iostream>
@@ -12,12 +12,6 @@ int main(){
 	return 0;
 }
 ```
-
-> variable address = 0x7ffda9bcb084  | variable value = 10
-> 
->pointer value =        0x7ffda9bcb084  | value by this address = 10
->
->new variable value = 15
 
 Таким чином можна змінювати дані змінної коли немає прямого доступу до неї.
 
@@ -34,11 +28,5 @@ int main(){
 	return 0;
 }
 ```
-
->variable = 15
->
->pointer = 15
->
->copy = 10
 
 Ще вказівники та посилання це єдиний спосіб доступитись до динамічно виділеної пам'яті
