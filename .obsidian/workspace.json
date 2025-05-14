@@ -36,16 +36,6 @@
             }
           },
           {
-            "id": "137afef59e9d0c9c",
-            "type": "leaf",
-            "state": {
-              "type": "p2p-replicator",
-              "state": {},
-              "icon": "waypoints",
-              "title": "Peer-to-Peer Replicator"
-            }
-          },
-          {
             "id": "33067c607b197a61",
             "type": "leaf",
             "state": {
@@ -74,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -221,7 +211,7 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "137afef59e9d0c9c",
+  "active": "10b2d6cf6c87bfa0",
   "lastOpenFiles": [
     "output_formating.md",
     "character_buffer.md",
