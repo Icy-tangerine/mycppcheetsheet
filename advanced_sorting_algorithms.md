@@ -28,6 +28,68 @@ int main(){
 }
 ```
 
+## heap sort
+
+складається з двох функцій heapify котра приймає масив і елемент який потрібно перемістити по піраміді на його підходяще місце, і друга функція heapsort котра викликами функції heapify та переносами найбільшого елемента в кінець масиву сортує масив.
+
+```c++
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+void heapify(int* arr,size_t size,int i){
+	int l=i*2+1;
+	int r=i*2+2;
+
+	if(l<size&&arr[i]<arr[l]){
+		swap(arr[i],arr[l]);
+		heapify(arr,size,l);
+	}
+	if(r<size&&arr[i]<arr[r]){
+		swap(arr[i],arr[r]);
+		heapify(arr,size,r);
+	}
+}
+void heapsort(int* arr,size_t size){
+	for(int i=size/2-1;i>=0;i--)
+		heapify(arr,size,i);
+
+	for(int i=size-1;i>0;i--){
+		swap(arr[0],arr[i]);
+		heapify(arr,i,0);
+	}
+}
+int main(){
+	size_t size=0;
+	cout<<"enter array size"<<endl;
+	cin>>size;
+	int* arr=new int[size];
+
+	//generating array
+	for(int i=0;i<size;i++){
+		arr[i]=10+rand()%50;
+	}
+
+	//printing array
+	for(int i=0;i<size;i++){
+		cout<<setw(4)<<arr[i];
+	}
+	cout<<endl;
+
+	//sorting array
+	heapsort(arr,size);
+
+	//printing sorted array
+	for(int i=0;i<size;i++){
+		cout<<setw(4)<<arr[i];
+	}
+	cout<<endl;
+	return 0;
+}
+
+```
+
+
 
 ## merge sort
 рекурсивно ділить масив пополам поки не дойде до частин розміром в 1 елемент тоді від об'єднує елементи в зростаючому чи спадаючому порядку
