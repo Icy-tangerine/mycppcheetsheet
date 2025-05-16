@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "advanced_sorting_algorithms.md",
+                "file": "dynamic_array.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "advanced_sorting_algorithms"
+              "title": "dynamic_array"
             }
           },
           {
@@ -207,18 +207,18 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "10b2d6cf6c87bfa0",
+  "active": "4002ee628a7d811e",
   "lastOpenFiles": [
+    "functions.md",
+    "random.md",
+    "dynamic_array.md",
+    "static_array.md",
+    "advanced_sorting_algorithms.md",
     "output_formating.md",
     "character_buffer.md",
-    "advanced_sorting_algorithms.md",
     "basic_sorting_algorithms.md",
-    "dynamic_array.md",
-    "random.md",
-    "functions.md",
     "output_coloring.md",
     "source_file_inclusion.md",
-    "static_array.md",
     "pointer.md",
     "Random_number_generator.md",
     "документи до п'ятниці.md",

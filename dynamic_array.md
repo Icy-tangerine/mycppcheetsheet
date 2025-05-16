@@ -4,7 +4,6 @@
 
 ```c++
 #include <iostream>
-#include <iomanip>
 int main(){
 	size_t size=0;
 	std::cout<<"enter size of array"<<std::endl;
@@ -13,7 +12,7 @@ int main(){
 	//allocating memory
 	int* array= new int[size];
 
-	//writing memory
+	//writing into memory
 	for(int i=0;i<size;i++)
 		array[i]=rand();
 
@@ -21,6 +20,8 @@ int main(){
 	for(int i=0;i<size;i++)
 		std::cout<<array[i]<<std::endl;
 
+	//releasing memory
+	delete [] array;
 	return 0;
 }
 ```
