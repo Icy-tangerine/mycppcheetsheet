@@ -1,6 +1,6 @@
 ## bubble sort 
 
-Проходить по всьому [[static_array|масиву]] міняючи місцями сусідні елементи поки масив не буде посортовано:
+Проходить по всьому [масиву](static_array.md) міняючи місцями сусідні елементи поки масив не буде посортовано:
 ```c++
 #include <iostream>
 #include <vector>
@@ -107,7 +107,7 @@ int main(){
 ---
 
 ## std::sort
-Можна використати алгоритм з стандартної бібліотеки [\<algorithm>](source_file_inclusion):
+Можна використати алгоритм з стандартної бібліотеки [\<algorithm>](source_file_inclusion.md):
 
 ```c++
 #include <iostream>

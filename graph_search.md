@@ -1,6 +1,6 @@
 
 
-[[bfs&dfs.gif]]
+[demo gif](bfs&dfs.gif)
 ## Breadth first search
  Обхід в ширину
 ```c++

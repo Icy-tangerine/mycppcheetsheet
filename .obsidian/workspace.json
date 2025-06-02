@@ -67,14 +67,12 @@
             "id": "33067c607b197a61",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "graph_search.md",
-                "mode": "source",
-                "source": false
+                "file": "bfs&dfs.gif"
               },
-              "icon": "lucide-file",
-              "title": "graph_search"
+              "icon": "lucide-image",
+              "title": "bfs&dfs"
             }
           }
         ],
@@ -223,14 +221,17 @@
   },
   "active": "33067c607b197a61",
   "lastOpenFiles": [
+    "graph_search.md",
     "bfs&dfs.gif",
+    "advanced_sorting_algorithms.md",
+    "basic_sorting_algorithms.md",
+    "source_file_inclusion.md",
+    "static_array.md",
+    "character_buffer.md",
     "Pasted image 20250602125650.png",
     "Pasted image 20250602125410.png",
     "dynamic_array.md",
-    "graph_search.md",
     "Untitled.canvas",
-    "source_file_inclusion.md",
-    "basic_sorting_algorithms.md",
     "functions.md",
     "output_formating.md",
     "min_max_avg.md",
@@ -238,13 +239,10 @@
     "logic_operators.md",
     "input_output_stream.md",
     "output_coloring.md",
-    "advanced_sorting_algorithms.md",
     "new_expression.md",
     "delete_expression.md",
     "pointer.md",
     "random.md",
-    "static_array.md",
-    "character_buffer.md",
     "Random_number_generator.md",
     "документи до п'ятниці.md",
     "basic_sorting_algorithms.pdf",
