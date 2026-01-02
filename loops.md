@@ -66,10 +66,11 @@ for("*початкове значення*" ; "*умова*" ; "*крок*"){
 
 
 ```c++
+#define _USE_MATH_DEFINES
 #include <iostream>
-#include "math.h"
+#include "cmath"
 int main(){
-	for(float i=0;i<3.14;i+=(3.14159265258979/10))
+	for(float i=0;i<3.14;i+=(M_PI/10))
 	{
 		std::cout<<sin(i)<<std::endl;
 	}
