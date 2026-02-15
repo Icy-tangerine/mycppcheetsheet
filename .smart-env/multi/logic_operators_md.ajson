@@ -1,0 +1,2 @@
+
+"smart_sources:logic_operators.md": {"path":"logic_operators.md","last_embed":{"hash":null},"embeddings":{},"last_read":{"hash":"11m5dt","at":1758130217048},"class_name":"SmartSource","last_import":{"mtime":1742547269219,"size":2034,"at":1758130217050,"hash":"11m5dt"},"blocks":{"###if - оператор гілкування":[2,85],"###if - оператор гілкування#{1}":[4,85],"#---frontmatter---":[33,85],"###логічні оператори":[86,130],"###логічні оператори#{1}":[88,130]},"outlinks":[{"title":"тут","target":"https://en.cppreference.com/w/cpp/language/if","line":31}],"task_lines":[]},

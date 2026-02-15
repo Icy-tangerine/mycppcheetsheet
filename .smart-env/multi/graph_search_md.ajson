@@ -1,0 +1,2 @@
+
+"smart_sources:graph_search.md": {"path":"graph_search.md","last_embed":{"hash":null},"embeddings":{},"last_read":{"hash":"12ozx0a","at":1758130217046},"class_name":"SmartSource","last_import":{"mtime":1748858945829,"size":1414,"at":1758130217047,"hash":"12ozx0a"},"blocks":{"#":[3,3],"##Breadth first search":[4,52],"##Breadth first search#{1}":[5,52],"##Depth first search":[53,101],"##Depth first search#{1}":[54,101]},"outlinks":[{"title":"demo gif","target":"bfs&dfs.gif","line":3}],"task_lines":[]},

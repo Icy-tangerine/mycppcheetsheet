@@ -1,32 +1,50 @@
-це змінна що може зберігати в собі адресу іншої змінної чи [[dynamic_array|масиву]] 
+вказівник це змінна що може зберігати в собі адресу іншої змінної чи [[dynamic_array|масиву]] 
 
-```c++
-#include <iostream>
-int main(){
-	int variable = 10;
-	int* pointer = &variable;
-	std::cout<<"variable address = "<<&variable<<"  | variable value = "<<variable<<std::endl;
-	std::cout<<"pointer value =    "<<pointer<<"  | value by this address = "<<*pointer<<std::endl;
-	*pointer+=5;
-	std::cout<<"new variable value = "<<variable<<std::endl;
-	return 0;
-}
+Вказівник - це змінна, яка містить **адресу** (місце у пам’яті) іншого об’єкта.  
+
+## Застосування 
+
+| №   | Ситуація                             | Чому використовувати                                         |
+| --- | ------------------------------------ | ------------------------------------------------------------ |
+| 1   | **Доступ до значень**                | Декілька змінних можна читати/змінювати через вказівник.     |
+| 2   | **Передача великих даних у функції** | Переходить лише адреса, а не копіювання всього масиву.       |
+| 3   | **Динамічне виділення пам’яті**      | `new`, `delete` працюють з вказівниками.                     |
+| 4   | **Створення зв’язних структур**      | Списки, дерева, графи – всі вузли зв’язані через вказівники. |
+
+---
+
+## Приклади (examples)
+
+```cpp
+// 1. Оголосити та використати простий вказівник
+int a = 10;
+int *p = &a;          // p зберігає адресу a
+std::cout << *p;      // виведе 10
+
+// 2. Передача параметра у функцію через вказівник
+void inc(int *x) { (*x)++; }
+inc(&a);               // a стане 11
+
+// 3. Динамічний масив (dynamic array)
+int n = 5;
+int *arr = new int[n];   // виділення пам’яті
+for (int i=0; i<n; ++i) arr[i] = i*2;
+delete [] arr;           // звільнення
+
+// 4. Показник на масив
+int b[3] = {1,2,3};
+int *pb = b;            // pb == &b[0]
+std::cout << *(pb+2);   // виведе 3
 ```
 
-Таким чином можна змінювати дані змінної коли немає прямого доступу до неї.
+---
 
-```c++
-#include <iostream>
-int main(){
-	int variable = 10;//creating variable
-	int* pointer = &variable;//creating pointer and initializing it with variable address
-	int copy = *pointer;//creating copy of variable
-	variable+=5;//adding 5 to a variable
-	std::cout<<"variable = "<<variable<<//variable changed to 15
-		"\npointer = "<<*pointer<<//pointer shows updated value of variable
-		"\ncopy = "<<copy<<std::endl;//copy hasn't been changed
-	return 0;
-}
-```
+## Теги (tags)
 
-Ще вказівники та посилання це єдиний спосіб доступитись до динамічно виділеної пам'яті
+- #Вказівник
+- #Покажчик
+- #Масиви
+- #Динамічні_масиви
+- #Програмування
+
+---

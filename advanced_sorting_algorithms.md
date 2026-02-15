@@ -1,179 +1,130 @@
-## shell sort
+Алгоритми сортування з покращеною складністю (зазвичай $O(n \log n)$ або адаптивні) використовуються для обробки великих масивів даних, де базові алгоритми ($O(n^2)$) працюють занадто повільно.
 
-Задає відстнь між порівнюваними елементами в половину розміру масиву і послідовно перевіряє пари на цій відстані, якщо номер правого елементу більший за відстань між елементами та лівий елемент більший за правий тоді елементи міняються місцями і тоді відбувається перевірка лівого елемента та елемента що стоїть на вказаній відстані зліва від нього, коли одна з цих умов не виконається, ділить відстань на 2 і знову проходить по всьому масиву, і продовжує ділити відстань на 2 поки вона не дойде до 1 (тобто порівнюватись будуть сусідні елементи), в кінці цього проходу масив буде відсортовано.
-```c++
-#include <iostream>
-#include <algorithm>
-using namespace std;
-int main(){
-  const size_t size=30;
-  int array[size];
-  //filling array
-  for(int i =0;i<size;i++){
-    array[i]=rand()%100;
-    cout<<array[i]<<" ";
-  }
-  cout<<endl;
-  //sorting array
-	for(int d = size/2;d>=1;d/=2)
-		for(int i=d;i<size;i++)
-			for(int j=i;j>=d&&array[j-d]>array[j];j-=d){
-				swap(array[j],array[j-d]);
-			}
-  //printing array
-  for(int i=0;i<size;i++){
-    cout<<array[i]<<" ";
-  }
-  cout<<endl;
+## Порівняння алгоритмів
+
+| Алгоритм       | Складність (середня) | Складність (найгірша) | Особливості                                                               |
+| -------------- | -------------------- | --------------------- | ------------------------------------------------------------------------- |
+| **Shell Sort** | $O(n \log^2 n)$      | $O(n^2)$              | Покращене сортування вставками, не потребує додаткової пам'яті.           |
+| **Merge Sort** | $O(n \log n)$        | $O(n \log n)$         | Стабільне сортування, потребує $O(n)$ додаткової пам'яті.                 |
+| **Heap Sort**  | $O(n \log n)$        | $O(n \log n)$         | Використовує структуру даних "купа", не потребує додаткової пам'яті.      |
+| **Quick Sort** | $O(n \log n)$        | $O(n^2)$              | Найшвидший на практиці, але нестабільний і має поганий найгірший випадок. |
+
+---
+
+## Shell Sort (Сортування Шелла)
+Це вдосконалений варіант сортування вставками. Замість порівняння сусідніх елементів, він порівнює елементи на певній відстані (`gap`), яка поступово зменшується.
+
+```cpp
+void shellSort(int arr[], int n) {
+    for (int gap = n / 2; gap > 0; gap /= 2) {
+        for (int i = gap; i < n; i++) {
+            int temp = arr[i];
+            int j;
+            for (j = i; j >= gap && arr[j - gap] > temp; j -= gap) {
+                arr[j] = arr[j - gap];
+            }
+            arr[j] = temp;
+        }
+    }
 }
 ```
 
-## heap sort
+---
 
-складається з двох функцій heapify котра приймає масив і елемент який потрібно перемістити по піраміді на його підходяще місце, і друга функція heapsort котра викликами функції heapify та переносами найбільшого елемента в кінець масиву сортує масив. процес сортування складається з двох етапів, побудови піраміди та відповідно сортування. сама піраміда є перевернутим деревом де корінь має два дочірніх елементи і кожен дочірній елемент не може мати більше нід 2 дочірніх елементи, на першому етапі потрібно пройтись по всіх коренях дерева і зробити так щоб у кожного кореня обидва дочірні елементи були меншими за нього. тоді щоб посортувати масив достатньо поміняти місцями перший та останній елементи і викликати heapify на перший елемент подаючи йому все менший розмір масиву поки розмір не дойде до 1
+## Merge Sort (Сортування злиттям)
+Рекурсивний алгоритм, що працює за принципом "розділяй і володарюй". Він ділить масив навпіл, сортує кожну частину і зливає їх у впорядкований масив.
 
-```c++
-#include <iostream>
-#include <iomanip>
-using namespace std;
+```cpp
+void merge(int arr[], int l, int m, int r) {
+    int n1 = m - l + 1;
+    int n2 = r - m;
+    int* L = new int[n1];
+    int* R = new int[n2];
 
-void heapify(int* arr,size_t size,int i){
-	int l=i*2+1;
-	int r=i*2+2;
+    for (int i = 0; i < n1; i++) L[i] = arr[l + i];
+    for (int j = 0; j < n2; j++) R[j] = arr[m + 1 + j];
 
-	if(l<size&&arr[i]<arr[l]){
-		swap(arr[i],arr[l]);
-		heapify(arr,size,l);
-	}
-	if(r<size&&arr[i]<arr[r]){
-		swap(arr[i],arr[r]);
-		heapify(arr,size,r);
-	}
-}
-void heapsort(int* arr,size_t size){
-	for(int i=size/2-1;i>=0;i--)
-		heapify(arr,size,i);
+    int i = 0, j = 0, k = l;
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) arr[k++] = L[i++];
+        else arr[k++] = R[j++];
+    }
+    while (i < n1) arr[k++] = L[i++];
+    while (j < n2) arr[k++] = R[j++];
 
-	for(int i=size-1;i>0;i--){
-		swap(arr[0],arr[i]);
-		heapify(arr,i,0);
-	}
-}
-int main(){
-	size_t size=0;
-	cout<<"enter array size"<<endl;
-	cin>>size;
-	int* arr=new int[size];
-
-	//generating array
-	for(int i=0;i<size;i++){
-		arr[i]=10+rand()%50;
-	}
-
-	//printing array
-	for(int i=0;i<size;i++){
-		cout<<setw(4)<<arr[i];
-	}
-	cout<<endl;
-
-	//sorting array
-	heapsort(arr,size);
-
-	//printing sorted array
-	for(int i=0;i<size;i++){
-		cout<<setw(4)<<arr[i];
-	}
-	cout<<endl;
-	return 0;
+    delete[] L;
+    delete[] R;
 }
 
-```
-
-
-
-## merge sort
-рекурсивно ділить масив пополам поки не дойде до частин розміром в 1 елемент тоді від об'єднує половини попорядку вибираючи з них менші елементи і додаючи їх в загальий масив
-
-```c++
-#include <iostream>
-#include <iomanip>
-using namespace std;
-void merge(int* arr,int left,int mid,int right){
-		//setting distance from start to mid 
-		int n1 = mid - left + 1;
-		//and from mid to end
-    int n2 = right - mid;
-
-
-		int* Lhalf=new int[n1];
-		int* Rhalf=new int[n2];
-		//filling temporary array with data from first half of array
-		for(int i=0;i<n1;i++)
-			Lhalf[i]=arr[left+i];
-		//filling temporary array with data from second half of array
-		for(int i=0;i<n2;i++)
-			Rhalf[i]=arr[mid+1+i];
-		
-		int i=0,j=0,k=left;
-		//writing data from temporary arrays to original array in sorted order
-		while(i<n1 && j<n2){
-			if(Lhalf[i]<=Rhalf[j]){
-				arr[k]=Lhalf[i];
-				i++;
-			}else{
-				arr[k]=Rhalf[j];
-				j++;
-			}
-			k++;
-		}
-		//writing remaining data into original array
-		while(i<n1){
-			arr[k]=Lhalf[i];
-			i++;k++;
-		}
-		while(j<n2){
-			arr[k]=Rhalf[j];
-			j++;k++;
-		}	
-		//reseasing the allocated for temporary arrays memory
-		delete[] Lhalf;
-		delete[] Rhalf;
-}
-void mergesort(int* arr,int left,int right){
-	int mid;
-	//when length of array is greater then 1
-	if(left<right){
-		//setting the mid point to split the array
-		mid=left+(right-left)/2;
-		//calling this function while passing into it the first half of array
-		mergesort(arr,left,mid);
-		//calling this function while passing into it the second half of array
-		mergesort(arr,mid+1,right);
-		//when splitting is done we get out of this funciton to start merging
-		merge(arr,left,mid,right);
-		//when two halves are merged we get out of this function
-	}
-}
-void print(int* arr,size_t size){
-	for(int i=0;i<size;i++)
-		cout<<setw(4)<<arr[i];
-}
-int main(){
-	size_t size=20;
-	int* arr=new int[size];
-//filling array
-	for(int i=0;i<size;i++){
-		arr[i]=10+rand()%50;
-	}
-//printing unsorted array
-	print(arr,size);
-	cout<<endl;
-//sorting the array
-	mergesort(arr,0,size-1);
-
-//printing sorted array
-	print(arr,size);
-	cout<<endl;
-	return 0;
+void mergeSort(int arr[], int l, int r) {
+    if (l < r) {
+        int m = l + (r - l) / 2;
+        mergeSort(arr, l, m);
+        mergeSort(arr, m + 1, r);
+        merge(arr, l, m, r);
+    }
 }
 ```
+
+---
+
+## Heap Sort (Пірамідальне сортування)
+Використовує бінарну купу (binary heap). Спочатку будується "max-heap", де корінь — найбільший елемент, потім корінь міняється з останнім елементом і купа перебудовується.
+
+```cpp
+void heapify(int arr[], int n, int i) {
+    int largest = i;
+    int l = 2 * i + 1;
+    int r = 2 * i + 2;
+
+    if (l < n && arr[l] > arr[largest]) largest = l;
+    if (r < n && arr[r] > arr[largest]) largest = r;
+
+    if (largest != i) {
+        std::swap(arr[i], arr[largest]);
+        heapify(arr, n, largest);
+    }
+}
+
+void heapSort(int arr[], int n) {
+    for (int i = n / 2 - 1; i >= 0; i--)
+        heapify(arr, n, i);
+
+    for (int i = n - 1; i > 0; i--) {
+        std::swap(arr[0], arr[i]);
+        heapify(arr, i, 0);
+    }
+}
+```
+
+---
+
+## Quick Sort (Швидке сортування)
+Вибирає опорний елемент (`pivot`) і переставляє елементи так, щоб зліва були менші за нього, а справа — більші. Потім рекурсивно повторює це для обох частин.
+
+```cpp
+int partition(int arr[], int low, int high) {
+    int pivot = arr[high];
+    int i = (low - 1);
+    for (int j = low; j < high; j++) {
+        if (arr[j] < pivot) {
+            std::swap(arr[++i], arr[j]);
+        }
+    }
+    std::swap(arr[i + 1], arr[high]);
+    return (i + 1);
+}
+
+void quickSort(int arr[], int low, int high) {
+    if (low < high) {
+        int pi = partition(arr, low, high);
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+}
+```
+
+---
+
+## Теги
+#sorting #algorithms #shellsort #mergesort #heapsort #quicksort 

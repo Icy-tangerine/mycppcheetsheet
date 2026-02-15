@@ -1,0 +1,32 @@
+{
+  "_version": 1,
+  "debugLogging": false,
+  "useNativeFetch": false,
+  "providers": [
+    {
+      "id": "id-1758131911229",
+      "name": "LM Studio",
+      "apiKey": "",
+      "url": "http://localhost:1234/v1",
+      "type": "lmstudio",
+      "model": "unsloth/gpt-oss-20b",
+      "availableModels": [
+        "unsloth/gpt-oss-20b",
+        "qwen/qwen3-4b-thinking-2507",
+        "text-embedding-nomic-embed-text-v1.5"
+      ]
+    },
+    {
+      "id": "id-1758780086966",
+      "name": "Ollama",
+      "apiKey": "",
+      "url": "http://localhost:11434",
+      "type": "ollama",
+      "model": "qwen3-zettel:latest",
+      "availableModels": [
+        "qwen3-zettel:latest",
+        "qwer3-coder-first:latest"
+      ]
+    }
+  ]
+}
