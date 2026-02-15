@@ -1,9 +1,9 @@
 
 Це набір коротких описів різних інструментів C++ 
 
-по плану його потрібно відкривати з допомогою [[https://obsidian.md|obsidian]]
+по плану його потрібно відкривати з допомогою [obsidian](https://obsidian.md)
 
-скачати репозиторій можна з допомогою [[https://git-scm.com/install/windows|git]]
+скачати репозиторій можна з допомогою [git](https://git-scm.com/install/windows)
 
 командою
 ``` bash
